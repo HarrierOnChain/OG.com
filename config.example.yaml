@@ -1,0 +1,44 @@
+# OG.com Trading Bot — example config.
+# Copy to `config.yaml` and fill in. NEVER commit your real config.yaml.
+# Full engine + all 20+ venue adapters:
+#   https://github.com/HarrierOnChain/Prediction-Markets-Trading-Bot-Toolkits
+
+venue: og.com   # adapter selector
+enable_trading: false               # ALWAYS start in dry-run
+
+credentials:
+  # Uncomment the block that matches OG.com.
+
+  # On-chain venues (wallet auth):
+  # private_key: "0000000000000000000000000000000000000000000000000000000000000000"
+  # funder_address: "0x0000000000000000000000000000000000000000"
+
+  # Centralized / regulated venues (API auth):
+  # api_key: ""
+  # api_secret: ""
+
+risk:
+  circuit_breaker:
+    max_consecutive_large_trades: 5
+    window_seconds: 60
+    cooldown_seconds: 300
+  depth_guard:
+    min_orderbook_depth_usd: 250
+  trade_floor:
+    min_trade_size_usd: 5
+
+# Strategies available on OG.com. Toggle per your thesis.
+strategies:
+  sports_execution:
+    enabled: true
+    sports: ["NBA", "NFL", "Soccer"]
+    max_latency_ms: 50
+
+  orderbook_imbalance:
+    enabled: true
+    refresh_ms: 500
+
+  market_making:
+    enabled: true
+    spread_cents: 1
+    inventory_skew: true
