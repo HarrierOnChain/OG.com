@@ -7,7 +7,7 @@
 
 > Automated **OG.com trading bot** — Social / multi-outcome. Part of the [Prediction Market Toolkits](https://github.com/HarrierOnChain/Prediction-Markets-Trading-Bot-Toolkits) suite: one execution core, one risk layer, every venue.
 
-**OG.com** is on the **adapter-driven roadmap** — the engine is built; the OG.com adapter is in the queue. Trade it and want it prioritized? [Reach out](https://t.me/HarrierOnChain) and it moves up.
+**OG.com** is **live in production today.**
 
 ---
 
@@ -22,6 +22,20 @@ These bots run on OG.com through a single venue adapter on the shared engine —
 | 💰 **Market Making** — be the house, not the gambler (two-sided GTD, inventory skew) |
 
 > Want a strategy not listed here on OG.com? Adapter coverage is demand-driven — [ask](https://t.me/HarrierOnChain).
+
+---
+
+## Quickstart
+
+Clone, drop in your keys, and run — the TUI lets you pick a strategy.
+
+```bash
+git clone https://github.com/HarrierOnChain/OG.com.git
+cd OG.com
+cp config.example.yaml config.yaml   # add your keys
+cargo run --release                  # launch the TUI
+# headless: cargo run --release -- run copy-trading
+```
 
 ---
 
